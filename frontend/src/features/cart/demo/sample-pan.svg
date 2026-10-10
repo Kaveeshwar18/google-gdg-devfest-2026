@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1100" viewBox="0 0 1100 1100">
+<rect width="1100" height="1100" fill="#eff6ff"/>
+<g transform="translate(0,130)">
+<rect x="12" y="12" width="1076" height="816" fill="none" stroke="#1e3a8a" stroke-width="4"/>
+<rect x="12" y="12" width="1076" height="52" fill="#b91c1c"/>
+<text x="550" y="48" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle">SAMPLE - DUMMY DATA</text>
+<text x="550" y="120" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="bold" fill="#111111" text-anchor="middle">INCOME TAX DEPARTMENT</text>
+<text x="550" y="170" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="normal" fill="#111111" text-anchor="middle">GOVT. OF INDIA</text>
+<text x="550" y="216" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="normal" fill="#111111" text-anchor="middle">Permanent Account Number</text>
+<text x="60" y="276" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="bold" fill="#111111">ABCDE1234F</text>
+<text x="60" y="344" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#111111">Name</text>
+<text x="60" y="390" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#111111">ASHA KUMARI SHARMA</text>
+<text x="60" y="444" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#111111">Father's Name</text>
+<text x="60" y="490" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#111111">RAMESH SHARMA</text>
+<text x="60" y="544" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#111111">Date of Birth</text>
+<text x="60" y="590" font-family="Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#111111">26/01/1990</text>
+<text x="550" y="810" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#b91c1c" text-anchor="middle">Not a real document - for Passport Mitra demo only</text>
+</g>
+</svg>
