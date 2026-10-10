@@ -1,0 +1,21 @@
+{
+  "id": "c-adverse-pv-001",
+  "category": "adverse_pv",
+  "service": "reissue",
+  "situation": "After legally changing their name, an applicant applied to reissue their passport. Police did not complete verification because the school certificates show the old name while Aadhaar, PAN and the bank passbook show the new one.",
+  "remedies_reported": [
+    {"name": "Give the police an affidavit, sworn before a magistrate or notary, stating that both names belong to the same person", "outcome": "unknown"},
+    {"name": "Show the police the gazette notification of the name change", "outcome": "unknown"},
+    {"name": "Complete the formal name-change route first (affidavit, newspaper notice, gazette), then reapply", "outcome": "unknown"},
+    {"name": "Petition the High Court if the passport office refuses the application", "outcome": "unknown"}
+  ],
+  "conflict_note": "Lawyers disagree on whether an affidavit alone is enough or a gazette notification is needed first, and one lawyer said the High Court route is not available for this. Passport Seva's FAQ says applicants who changed their name should attach the required name-change documents with the application.",
+  "source": {
+    "title": "Kaanoon: Passport verification issue",
+    "url": "https://www.kaanoon.com/267858/passport-verification-issue",
+    "type": "lawyer_qa",
+    "date": "unknown"
+  },
+  "reliability": 3,
+  "your_summary": "Police would not finish verification because the old name on school certificates did not match the new name on identity documents. Many lawyers answered. They broadly agreed the applicant must prove both names are one person, but differed on how: an affidavit, a gazette notification, or both, with a court petition as a last resort that one lawyer disputed."
+}

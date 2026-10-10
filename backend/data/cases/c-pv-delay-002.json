@@ -1,0 +1,20 @@
+{
+  "id": "c-pv-delay-002",
+  "category": "pv_delay",
+  "service": "reissue",
+  "situation": "A family in Mumbai renewed their passports on a post-verification basis. Two months later, police verification was still pending, and they were about to move house, so the visit had to happen at an address they were leaving.",
+  "remedies_reported": [
+    {"name": "Go to the local police station and ask for the verifying constable's contact to arrange the home visit", "outcome": "worked"},
+    {"name": "Keep the valid rent agreement ready and have a neighbour available to confirm residence", "outcome": "unknown"},
+    {"name": "Hold off other applications, such as a child's passport, at the old address until the pending verification is complete", "outcome": "unknown"}
+  ],
+  "conflict_note": "Forum users say verification commonly takes longer in big cities like Mumbai. Official figures (MEA, December 2025) show Maharashtra had the largest number of passport files pending police verification over 30 days, but they are counts, not a prediction for any one case.",
+  "source": {
+    "title": "TechEnclave: Passport issue - catch 22 situation",
+    "url": "https://techenclave.com/t/passport-issue-catch-22-situation/273362",
+    "type": "forum",
+    "date": "2025-02"
+  },
+  "reliability": 2,
+  "your_summary": "Renewed passports were issued, but police verification was still pending months later just as the family was moving out. Visiting the police station got them a constable's number. The constable came, checked the rent agreement and spoke to a neighbour, then asked them to bring documents to the station. The thread ends before the final result."
+}

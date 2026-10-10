@@ -1,0 +1,21 @@
+{
+  "id": "c-address-002",
+  "category": "address_mismatch",
+  "service": "fresh",
+  "situation": "A tenant applying for a passport has an Aadhaar that still shows an older address, and the utility bills at the current flat are in the landlord's name.",
+  "remedies_reported": [
+    {"name": "Update the Aadhaar address to the current one before applying", "outcome": "unknown"},
+    {"name": "Show the rent agreement together with a utility bill for the flat, even if the bill is in the landlord's name", "outcome": "unknown"},
+    {"name": "Get a letter from the landlord confirming the stay", "outcome": "unknown"},
+    {"name": "Make sure neighbours or building security know the applicant, since police may ask them", "outcome": "unknown"}
+  ],
+  "conflict_note": "The blog says unregistered or informal rent agreements can raise doubts. MEA's 2017 office memorandum says passport offices must also accept unregistered rent agreements as valid address proof.",
+  "source": {
+    "title": "OnGrid: Documents for passport police verification in India",
+    "url": "https://ongrid.in/blogs/documents-for-passport-verification-in-india/",
+    "type": "blog",
+    "date": "2026-02"
+  },
+  "reliability": 2,
+  "your_summary": "A blog on preparing for police verification. It says most delays come from details that do not match across documents rather than missing papers. Its advice to renters: make the application address match the proof, update an outdated Aadhaar first, keep the rent agreement with the bills, and be known to neighbours."
+}

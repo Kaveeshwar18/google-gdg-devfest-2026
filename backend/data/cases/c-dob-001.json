@@ -1,0 +1,21 @@
+{
+  "id": "c-dob-001",
+  "category": "dob_mismatch",
+  "service": "reissue",
+  "situation": "The municipal birth certificate shows a date of birth one year earlier than the date on the passport, the school leaving certificate and the Class 10 and 12 board results. The holder lives abroad and needs the records to agree.",
+  "remedies_reported": [
+    {"name": "Apply to the birth registrar to correct the birth certificate, with an affidavit and supporting proof", "outcome": "unknown"},
+    {"name": "Apply for passport reissue with a change of particulars, supported by an affidavit attested by a magistrate or SDM", "outcome": "unknown"},
+    {"name": "Get a civil court declaration of the correct date first, then use it to correct the passport and other records", "outcome": "unknown"},
+    {"name": "After the passport is settled, update PAN and Aadhaar to the same date", "outcome": "unknown"}
+  ],
+  "conflict_note": "Lawyers disagree on whether the passport office will change a date of birth without a court order, whether the birth certificate or the school records should be corrected, and whether a time limit applies to correcting the date for adults. Passport Seva points to a separate circular for correcting the date of birth in an existing passport.",
+  "source": {
+    "title": "Kaanoon: Date of birth change in passport",
+    "url": "https://www.kaanoon.com/491440/date-of-birth-change-in-passport",
+    "type": "lawyer_qa",
+    "date": "unknown"
+  },
+  "reliability": 3,
+  "your_summary": "The birth certificate and the school records gave different years of birth, and the passport followed the school records. Lawyers suggested several routes: correct the birth record, reissue the passport with an affidavit, or get a court declaration first. They disagreed on which record to fix and whether a court order is needed."
+}

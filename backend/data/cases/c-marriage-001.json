@@ -1,0 +1,20 @@
+{
+  "id": "c-marriage-001",
+  "category": "name_change_marriage",
+  "service": "reissue",
+  "situation": "A married woman reissuing her passport wanted to change her surname from her maiden name to her married name, along with her address. An ad agency said a newspaper notice and a notarised affidavit were needed, which the family found confusing.",
+  "remedies_reported": [
+    {"name": "Email the local passport officer with the documents and ask which documents are needed", "outcome": "worked"},
+    {"name": "Carry the marriage certificate or Annexure J (bringing both is safest), plus a printout of the officer's reply", "outcome": "worked"},
+    {"name": "Publish a newspaper notice of the name change with a notarised affidavit", "outcome": "unknown"}
+  ],
+  "conflict_note": "The official document advisory says a surname change after marriage needs only a marriage certificate or Annexure J. At the counter, staff still asked why there was no newspaper notice, so practice at the counter can differ from the published rule.",
+  "source": {
+    "title": "Team-BHP: Passport renewal procedure (page 193)",
+    "url": "https://www.team-bhp.com/forum/shifting-gears/78424-passport-renewal-procedure-193.html",
+    "type": "forum",
+    "date": "2026-04"
+  },
+  "reliability": 2,
+  "your_summary": "Different people gave the family different answers about changing a wife's surname after marriage. The passport officer confirmed by email that a marriage certificate or Annexure J was enough. At the appointment, staff questioned the missing newspaper notice and the officer in charge took about two hours, but the change was approved."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "c-address-001",
+  "category": "address_mismatch",
+  "service": "fresh",
+  "situation": "The police verification report comes back adverse over the address. Common triggers: nobody home when police visit, a landlord or society that cannot confirm the applicant lives there, a name plate or register that does not match, a tenant without clear rental papers, or a recent move.",
+  "remedies_reported": [
+    {"name": "Read the exact status and reason on the Passport Seva portal and save screenshots", "outcome": "unknown"},
+    {"name": "Collect current address proof: rent agreement, recent utility bill, Aadhaar with the current address, a letter from the landlord", "outcome": "unknown"},
+    {"name": "Send a written representation to the Regional Passport Office asking for re-verification, with the proof attached", "outcome": "unknown"},
+    {"name": "Escalate through the Passport Seva grievance system, then CPGRAMS if unresolved", "outcome": "unknown"},
+    {"name": "File an RTI request for the recorded reason (supports the representation but does not change the report)", "outcome": "unknown"}
+  ],
+  "conflict_note": "The guide recommends a registered rent agreement, but MEA's 2017 office memorandum says unregistered rent agreements are also accepted as address proof. The official FAQ says to contact the passport office to learn the reason, then ask for re-verification.",
+  "source": {
+    "title": "righttoinformation.wiki: Passport police verification adverse for address mismatch",
+    "url": "https://righttoinformation.wiki/practical-guides/passport-police-verification-adverse-address-mismatch",
+    "type": "blog",
+    "date": "2026-09"
+  },
+  "reliability": 2,
+  "your_summary": "A practical guide to adverse police reports caused by address problems. It lists why police could not confirm the applicant's address and lays out a sequence: find the recorded reason, gather proof of the current address, ask the passport office in writing for a fresh check, and escalate through grievance channels if there is no reply."
+}

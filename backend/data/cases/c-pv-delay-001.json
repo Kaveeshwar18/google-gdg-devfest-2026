@@ -1,0 +1,20 @@
+{
+  "id": "c-pv-delay-001",
+  "category": "pv_delay",
+  "service": "fresh",
+  "situation": "Weeks after applying, the passport has not arrived. The police report is still pending or shows as incomplete, for example blank columns or missing papers about the applicant's stay at the address.",
+  "remedies_reported": [
+    {"name": "Visit the passport office concerned if the passport has not arrived after the expected time", "outcome": "unknown"},
+    {"name": "Follow up with the local police station when the report is marked incomplete, since the office may return it to them", "outcome": "unknown"},
+    {"name": "Submit the additional documents the passport office asks for when the report is incomplete or not received", "outcome": "unknown"}
+  ],
+  "conflict_note": "This FAQ compilation is from 2019. Some details, such as the specific document counts it mentions for clearing incomplete reports, could not be confirmed on the current Passport Seva portal.",
+  "source": {
+    "title": "TaxHeal: Police verification for passport FAQs (India)",
+    "url": "https://www.taxheal.com/?p=75681",
+    "type": "blog",
+    "date": "2019-02"
+  },
+  "reliability": 2,
+  "your_summary": "A compilation of police verification questions and answers, largely based on older official FAQs. For a delay, it says to go to the passport office. For an incomplete report, it says to follow up with the police and supply any further documents the office requests."
+}

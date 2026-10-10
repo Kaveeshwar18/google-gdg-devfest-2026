@@ -1,0 +1,20 @@
+{
+  "id": "c-name-disc-002",
+  "category": "name_discrepancy",
+  "service": "reissue",
+  "situation": "The same person's name is written differently across documents: initials before the given name on one, after it on another, expanded in full on some, and in two different word orders on Aadhaar after corrections. The Aadhaar centre says its correction limit is used up and any further change needs a gazette notification.",
+  "remedies_reported": [
+    {"name": "Choose one full name, publish it in a gazette notification, then update every other document to match", "outcome": "unknown"},
+    {"name": "Leave the documents as they are, since the short (initials) and expanded forms describe the same name", "outcome": "unknown"},
+    {"name": "Treat the current Aadhaar form (given name, father's name, surname) as the reference name and match others to it", "outcome": "unknown"}
+  ],
+  "conflict_note": "Lawyers split: some say standardise through a gazette notification, others say make no change at all. The official Passport Seva pages reviewed do not address initials versus expanded names.",
+  "source": {
+    "title": "Kaanoon: Name change, full name, initials, Aadhaar, PAN",
+    "url": "https://www.kaanoon.com/384949/name-change-full-name-initials-aadhar-pan",
+    "type": "lawyer_qa",
+    "date": "unknown"
+  },
+  "reliability": 3,
+  "your_summary": "Someone with a three-part name found it recorded in several forms: initials first, initials last, fully expanded, and in two different orders. Aadhaar corrections had run out. Lawyers disagreed on whether to fix one name through a gazette notice and update everything, or to leave the documents alone because the forms are consistent abbreviations of one name."
+}
