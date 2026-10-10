@@ -1,6 +1,7 @@
 // On-device OCR with Tesseract.js. Language data is lazy-loaded per script and cached by the browser.
 import { createWorker, type Worker } from 'tesseract.js'
 import { langInfo, type Lang } from '../../lib/langs'
+import { prepareImage } from './imageprep'
 
 const workers = new Map<string, Promise<Worker>>()
 let onProgress: ((fraction: number) => void) | undefined
@@ -17,20 +18,18 @@ function workerFor(lang: Lang): Promise<Worker> {
       },
     })
     workers.set(key, worker)
+    // A failed start (offline, language data missing) must not be cached, or every retry would fail too.
+    worker.catch(() => workers.delete(key))
   }
   return worker
 }
 
-/** TODO(cart): resize to ~1600px, grayscale, boost contrast on a canvas (plan 3.3 pipeline). */
-async function preprocess(image: Blob): Promise<Blob> {
-  return image
-}
-
+/** Reads text from a photo on this device. Throws on failure; the caller offers manual entry. */
 export async function recognize(image: Blob, lang: Lang, progress?: (fraction: number) => void): Promise<string> {
   onProgress = progress
   try {
     const worker = await workerFor(lang)
-    const { data } = await worker.recognize(await preprocess(image))
+    const { data } = await worker.recognize(await prepareImage(image))
     return data.text
   } finally {
     onProgress = undefined

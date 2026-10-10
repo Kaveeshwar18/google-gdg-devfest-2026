@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1100" viewBox="0 0 1100 1100">
+<rect width="1100" height="1100" fill="#fff7ed"/>
+<g transform="translate(0,200)">
+<rect x="12" y="12" width="1076" height="676" fill="none" stroke="#1e3a8a" stroke-width="4"/>
+<rect x="12" y="12" width="1076" height="52" fill="#b91c1c"/>
+<text x="550" y="48" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="bold" fill="#ffffff" text-anchor="middle">SAMPLE - DUMMY DATA</text>
+<text x="550" y="120" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="bold" fill="#111111" text-anchor="middle">Government of India</text>
+<text x="60" y="184" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="bold" fill="#111111">Asha Kumari Sharma</text>
+<text x="60" y="242" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="normal" fill="#111111">DOB: 26/01/1990</text>
+<text x="60" y="294" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="normal" fill="#111111">FEMALE</text>
+<text x="60" y="346" font-family="Helvetica, Arial, sans-serif" font-size="50" font-weight="bold" fill="#111111">1234 5678 9012</text>
+<text x="60" y="414" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="normal" fill="#111111">Address: 12 Test Street, Sample Nagar,</text>
+<text x="60" y="462" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="normal" fill="#111111">Chennai - 600001</text>
+<text x="550" y="670" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#b91c1c" text-anchor="middle">Not a real document - for Passport Mitra demo only</text>
+</g>
+</svg>

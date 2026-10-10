@@ -2,7 +2,9 @@
   "cart": {
     "title": "Check my documents",
     "onDevice": "Photos are read on this phone and never uploaded.",
-    "addPhoto": "Add photo",
+    "addPhoto": "Take photo",
+    "choosePhoto": "Choose file",
+    "enterManually": "Type it in",
     "reading": "Reading… {{pct}}%",
     "whatWeRead": "What we read",
     "docs": {
@@ -12,6 +14,282 @@
       "marksheet": "Class 10 certificate",
       "address": "Rent agreement or utility bill",
       "birth": "Birth certificate"
+    },
+    "fields": {
+      "name": "Name",
+      "fatherName": "Father's name",
+      "motherName": "Mother's name",
+      "dob": "Date of birth (DD/MM/YYYY)",
+      "address": "Address",
+      "aadhaarLast4": "Last 4 digits of Aadhaar",
+      "pan": "PAN",
+      "passportNumber": "Passport number",
+      "expiry": "Expiry date (DD/MM/YYYY)"
+    },
+    "appType": {
+      "title": "What are you applying for?",
+      "hint": "This changes which checks apply.",
+      "fresh": "New passport",
+      "reissue": "Renew or re-issue",
+      "minor": "Child under 18"
+    },
+    "status": {
+      "empty": "Not added",
+      "review": "Please check what we read",
+      "confirmed": "Confirmed"
+    },
+    "edit": "Edit",
+    "remove": "Remove",
+    "tryAgain": "Try another photo",
+    "readFailed": "We couldn't read this photo. You can try another one or type the details in.",
+    "noText": "We couldn't find readable text in this photo. Please type the details in, or go back and try a clearer photo.",
+    "lookLike": "This looks like your {{doc}}.",
+    "useAs": "Use it as {{doc}}",
+    "useAsBlocked": "The {{doc}} slot already has a document. Remove it first to move this one.",
+    "confirm": {
+      "title": "Is this right?",
+      "intro": "Please check each line against your document and fix anything wrong. Checks only run after you confirm.",
+      "readHint": "Read from your photo. Please check.",
+      "missingHint": "Not read. Please type it in, or leave it blank if it isn't on the document.",
+      "aadhaarNote": "We keep only the last 4 digits of your Aadhaar number.",
+      "invalidDate": "Please write the date as DD/MM/YYYY, or just the year.",
+      "yes": "Yes, this is correct",
+      "cancel": "Remove this document"
+    },
+    "checkNow": "Check my documents",
+    "confirmFirst": "Confirm or remove each document you added before checking.",
+    "addOne": "Add and confirm at least one document to check.",
+    "checking": "Checking…",
+    "result": {
+      "title": "Your result",
+      "not_ready": "Not ready to book yet",
+      "almost_ready": "Almost ready",
+      "ready": "No problems found",
+      "not_ready_sub": "We found something in the documents you confirmed that commonly causes problems. Fixing it first may save you a trip.",
+      "almost_ready_sub": "A few things are worth checking before you book.",
+      "ready_sub": "We didn't find a problem in what you confirmed. Other requirements are not checked here.",
+      "disclaimer": "This is a helper, not an official decision. Passport Seva decides what is accepted, and a good result here is not a guarantee of approval.",
+      "added": "Documents checked",
+      "notChecked": "What we could not check",
+      "issues": "What we found",
+      "noIssues": "No differences found between your confirmed documents.",
+      "found": "What we found",
+      "why": "Why it matters",
+      "fix": "What to do",
+      "provisional": "We have not yet confirmed this rule against the official Passport Seva page. Please verify it there.",
+      "source": "Check on Passport Seva",
+      "fixWithMitra": "Fix with Mitra",
+      "fixHint": "Opens the chat with a short note about these issues, with no document details. Nothing is sent until you press send.",
+      "back": "Edit my documents",
+      "severity": {
+        "blocker": "Needs fixing",
+        "warning": "Worth checking",
+        "info": "Good to know"
+      }
+    },
+    "issues": {
+      "name_mismatch": {
+        "found": "The name on your {{a}} and your {{b}} look different.",
+        "why": "Names that differ between documents commonly cause problems and may need to be corrected.",
+        "fix": "Check that both were read correctly above. If both are right, ask Mitra how to fix a name difference."
+      },
+      "name_spelling": {
+        "found": "The spelling of your name looks slightly different on your {{a}} and your {{b}}.",
+        "why": "Small spelling differences commonly cause problems at verification.",
+        "fix": "Check each document above. If they really differ, ask Mitra whether a correction is needed."
+      },
+      "name_order": {
+        "found": "Your name is in a different order on your {{a}} and your {{b}}.",
+        "why": "A different order of the same names can commonly cause problems at verification.",
+        "fix": "Check the order on each document. If it differs, ask Mitra whether you need to correct it."
+      },
+      "name_initials": {
+        "found": "Your {{a}} and your {{b}} seem to use initials or a shorter form of your name.",
+        "why": "Initials on one document and full names on another commonly cause problems.",
+        "fix": "Check how each document writes your name. If they differ, ask Mitra what to do."
+      },
+      "dob_mismatch": {
+        "found": "The date of birth on your {{a}} and your {{b}} is different.",
+        "why": "A date of birth that differs between documents commonly causes problems and may need to be corrected.",
+        "fix": "Check that both were read correctly above. If both are right, ask Mitra how to correct a date of birth."
+      },
+      "dob_proof_missing": {
+        "found": "We didn't see a document that proves your date of birth, such as a birth certificate or school certificate.",
+        "why": "Passport Seva asks for a proof of date of birth. Which documents are accepted can depend on your situation, so please verify.",
+        "fix": "Add one of these documents, or check the official list of accepted proofs."
+      },
+      "dob_proof_birth_only": {
+        "found": "Your date of birth looks to be on or after 1 October 2023, and we didn't see a birth certificate.",
+        "why": "For that period the birth certificate is reported to be the listed proof of date of birth. Please verify this on the official page.",
+        "fix": "Add the birth certificate, or check the official list of accepted proofs."
+      },
+      "minor_flow_required": {
+        "found": "Your date of birth suggests the applicant is under 18, but you chose a different application type.",
+        "why": "Applications for people under 18 commonly follow a separate process. Please verify with Passport Seva.",
+        "fix": "Change the application type above to \"Child under 18\", or check the date of birth you confirmed."
+      },
+      "missing_address": {
+        "found": "We didn't see a proof of your present address.",
+        "why": "A proof of present address is normally asked for. Please verify what applies to you.",
+        "fix": "Add a rent agreement or utility bill, or check the official list of accepted address proofs."
+      },
+      "missing_passport": {
+        "found": "We didn't see your old passport.",
+        "why": "Re-issue normally needs the old passport. Please verify what applies to you.",
+        "fix": "Add your old passport, or check the official re-issue document list."
+      },
+      "address_mismatch": {
+        "found": "The address on your {{a}} and your {{b}} looks different.",
+        "why": "Addresses that differ between documents can commonly cause questions.",
+        "fix": "Check that both were read correctly above. If you have moved, ask Mitra which address proof to use."
+      },
+      "parent_name_mismatch": {
+        "found": "A parent's name on your {{a}} and your {{b}} looks different.",
+        "why": "Parents' names that differ between documents can commonly cause questions.",
+        "fix": "Check that both were read correctly above. If both are right, ask Mitra what to do."
+      },
+      "passport_expired": {
+        "found": "The expiry date on your old passport has passed.",
+        "why": "This is common when you are renewing. We show it so you know the date was read.",
+        "fix": "Nothing to fix for most re-issue applications. Carry the old passport."
+      }
+    },
+    "notes": {
+      "nameNotCompared": "We could not compare the name on your {{doc}} because it is not written in English letters.",
+      "dobNotCompared": "We could not compare the date of birth on your {{doc}} because it is not a full date or a year.",
+      "expiryNotCompared": "We could not read a full expiry date for your old passport.",
+      "ageUnknown": "We could not work out the applicant's age, so the under-18 check was skipped.",
+      "minorButAdult": "You chose \"Child under 18\", but the date of birth you confirmed is 18 or older.",
+      "singleDoc": "Only one document was confirmed, so there is nothing to compare it with yet.",
+      "reissueDobProof": "For re-issue we do not check for a proof of date of birth.",
+      "reissueAddress": "For re-issue, a new address proof may be needed only if your address has changed. We do not check this.",
+      "minorExtras": "For a child, parents' consent forms and a parent's address proof may apply. We do not check these.",
+      "otherRequirements": "Photographs, forms, fees and other requirements are not checked here."
+    },
+    "handoff": {
+      "intro": "My documents may have some problems.",
+      "general": "I need help understanding which documents apply to my application.",
+      "name_mismatch": "My name may not match between my {{a}} and my {{b}}.",
+      "name_order": "My name may be in a different order on my {{a}} and my {{b}}.",
+      "name_initials": "My name may use initials on my {{a}} or my {{b}}.",
+      "dob_mismatch": "My date of birth differs between my {{a}} and my {{b}}.",
+      "address_mismatch": "My address may differ between my {{a}} and my {{b}}.",
+      "parent_name_mismatch": "A parent's name may differ between my {{a}} and my {{b}}.",
+      "dob_proof_missing": "I am not sure which document proves my date of birth.",
+      "passport_expired": "My old passport may have expired.",
+      "minor_flow_required": "I may need the process for applicants under 18.",
+      "missing_document": "I may be missing my {{doc}}."
+    },
+    "chooseType": "Is this a different document?",
+    "chooseTypePlaceholder": "Move it to…",
+    "evisa": {
+      "title": "Visiting India? e-Visa pre-check",
+      "intro": "For people who are not Indian citizens. Your answers stay on this page and are never sent anywhere.",
+      "fields": {
+        "passportKind": "Type of passport",
+        "passportExpiry": "Passport expiry date",
+        "blankPages": "Blank pages left in your passport",
+        "arrival": "Date you plan to arrive in India",
+        "evisasThisYear": "e-Visas you already used in that calendar year",
+        "pakistaniOrigin": "Are you of Pakistani origin?"
+      },
+      "kinds": {
+        "ordinary": "Ordinary passport",
+        "diplomatic_official": "Diplomatic or official passport",
+        "travel_document": "Travel document",
+        "endorsed": "Endorsed on another person's passport"
+      },
+      "origin": {
+        "no": "No",
+        "yes": "Yes",
+        "unsure": "Not sure",
+        "hint": "Check the official definition on the e-Visa portal if you are unsure."
+      },
+      "check": "Check my e-Visa details",
+      "required": "Please fill in your passport expiry date, blank pages and arrival date.",
+      "result": {
+        "not_ready": "Not ready to apply",
+        "almost_ready": "Almost ready",
+        "ready": "No problems found",
+        "not_ready_sub": "We found something that commonly causes problems with an e-Visa application.",
+        "almost_ready_sub": "A few things are worth checking before you apply.",
+        "ready_sub": "We did not find a problem in what you told us. Other requirements are not checked here.",
+        "disclaimer": "This is a helper that uses rules from Indian mission pages. Rules can change and pages disagree. Confirm on the official portal before you pay or travel. A good result is not a guarantee that a visa will be granted.",
+        "found": "What we found",
+        "why": "Why it matters",
+        "fix": "What to do",
+        "issues": "What we found",
+        "noIssues": "Nothing to fix in what you entered.",
+        "notes": "Good to know",
+        "provisional": "Sources disagree on this rule. Please confirm it on the official portal.",
+        "source": "Check the source",
+        "officialPortal": "Open the official e-Visa portal",
+        "severity": {
+          "blocker": "Needs fixing",
+          "warning": "Worth checking",
+          "info": "Good to know"
+        }
+      },
+      "issues": {
+        "ineligible_passport": {
+          "found": "Your passport type is not one the e-Visa is listed for.",
+          "why": "Diplomatic or official passports, travel documents and endorsements on another person's passport are listed as not eligible for the e-Visa.",
+          "fix": "Ask the Indian mission in your country which visa applies to you."
+        },
+        "pakistani_origin": {
+          "found": "You said you are of Pakistani origin.",
+          "why": "People of Pakistani origin are listed as needing a regular visa from an Indian mission instead of the e-Visa.",
+          "fix": "Apply for a regular visa at an Indian mission, and check the official definition first."
+        },
+        "too_late": {
+          "found": "Your arrival date is less than {{days}} days away, or has already passed.",
+          "why": "The e-Visa is listed as needing an application at least {{days}} days before you arrive.",
+          "fix": "Move your arrival date later, or ask an Indian mission about other options."
+        },
+        "too_early": {
+          "found": "Your arrival date is more than {{days}} days away.",
+          "why": "Pages disagree on how early you can apply (30, 60, 120 or 180 days). We use {{days}} days as a default.",
+          "fix": "Check the current window on the official portal before you apply."
+        },
+        "passport_validity": {
+          "found": "Your passport may expire less than {{months}} months after you arrive.",
+          "why": "The passport is listed as needing at least {{months}} months of validity from the day you arrive.",
+          "fix": "Renew your passport first, or choose a date that leaves enough validity."
+        },
+        "blank_pages": {
+          "found": "Your passport has fewer than {{pages}} blank pages.",
+          "why": "At least {{pages}} blank pages are listed as needed.",
+          "fix": "Get your passport updated or replaced before you apply."
+        },
+        "yearly_limit": {
+          "found": "You have already used {{max}} or more e-Visas this calendar year.",
+          "why": "Up to {{max}} e-Visas per calendar year are stated on several mission pages.",
+          "fix": "Apply for a regular visa at an Indian mission, or check the official portal."
+        },
+        "input_missing_arrival": {
+          "found": "We do not have a valid arrival date.",
+          "why": "The timing checks need it.",
+          "fix": "Enter the date you plan to arrive."
+        },
+        "input_missing_expiry": {
+          "found": "We do not have a valid passport expiry date.",
+          "why": "The validity check needs it.",
+          "fix": "Enter the expiry date printed in your passport."
+        },
+        "input_missing_blank_pages": {
+          "found": "We do not have the number of blank pages.",
+          "why": "The blank-page check needs it.",
+          "fix": "Count the blank pages in your passport and enter the number."
+        }
+      },
+      "notes": {
+        "originUnsure": "You were not sure about Pakistani origin. Please check the official definition before you apply.",
+        "yearlyUnknown": "We did not check how many e-Visas you used this year.",
+        "windowsVary": "Mission pages disagree on how early you can apply (30 to 180 days). Please confirm the current window.",
+        "onArrival": "On arrival, biometrics are taken at immigration. Carry a Yellow Fever card if you arrive from an affected country.",
+        "samePassport": "Travel on the same passport you applied with. If the visa was granted on an older passport, carry that one too.",
+        "confirmOfficial": "Confirm every rule on the official portal. Rules can change."
+      }
     }
   }
 }
