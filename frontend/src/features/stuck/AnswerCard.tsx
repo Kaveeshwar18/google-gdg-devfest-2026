@@ -159,25 +159,27 @@ export default function AnswerCard({ result }: { result: CaseResult }) {
         </section>
       )}
 
-      <section>
-        <h2 className="mb-2 font-semibold text-slate-600">{t('answer.sources')}</h2>
-        <ul className="flex flex-col gap-2">
-          {a.citations.map((c) => (
-            <li key={c.source_id}>
-              <a href={c.url} target="_blank" rel="noreferrer" className="inline-flex items-start gap-2 text-brand underline">
-                <ExternalLink className="mt-1 size-4 shrink-0" aria-hidden />
-                <span>
-                  {c.title}{' '}
-                  <span className="text-sm text-slate-500 no-underline">
-                    ({c.source_type}
-                    {c.date ? `, ${c.date}` : ''})
+      {a.citations.length > 0 && (
+        <section>
+          <h2 className="mb-2 font-semibold text-slate-600">{t('answer.sources')}</h2>
+          <ul className="flex flex-col gap-2">
+            {a.citations.map((c) => (
+              <li key={c.source_id}>
+                <a href={c.url} target="_blank" rel="noreferrer" className="inline-flex items-start gap-2 text-brand underline">
+                  <ExternalLink className="mt-1 size-4 shrink-0" aria-hidden />
+                  <span>
+                    {c.title}{' '}
+                    <span className="text-sm text-slate-500 no-underline">
+                      ({c.source_type}
+                      {c.date ? `, ${c.date}` : ''})
+                    </span>
                   </span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section>
         <h2 className="mb-2 font-semibold text-slate-600">{t('answer.escalation')}</h2>

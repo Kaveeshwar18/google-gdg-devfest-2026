@@ -1,4 +1,4 @@
-.PHONY: help setup dev backend frontend ingest query test lint check
+.PHONY: help setup dev backend frontend ingest query smoke test lint check
 
 # Port busy? make dev API_PORT=8010
 API_PORT ?= 8000
@@ -25,6 +25,9 @@ ingest: ## Rebuild the Chroma index from backend/data
 
 query: ## Try retrieval: make query q="name differs on aadhaar"
 	cd backend && uv run python scripts/query.py "$(q)"
+
+smoke: ## Live end-to-end run on the configured model: make smoke ONLY="HI Journey"
+	cd backend && uv run python scripts/smoke_live.py $(ONLY)
 
 test: ## Backend + frontend tests
 	cd backend && uv run pytest -q

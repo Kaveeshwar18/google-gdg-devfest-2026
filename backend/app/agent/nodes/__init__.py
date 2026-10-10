@@ -6,6 +6,7 @@ from app.agent.nodes.guardrail import guardrail
 from app.agent.nodes.intake import intake
 from app.agent.nodes.live_search import live_search
 from app.agent.nodes.localize import localize
+from app.agent.nodes.refuse import refuse
 from app.agent.nodes.retrieve import retrieve
 from app.agent.nodes.synthesize import synthesize
 from app.agent.nodes.triage import triage
@@ -18,6 +19,7 @@ __all__ = [
     "intake",
     "live_search",
     "localize",
+    "refuse",
     "retrieve",
     "synthesize",
     "triage",

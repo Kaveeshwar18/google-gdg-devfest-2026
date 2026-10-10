@@ -22,3 +22,11 @@ def test_glossary_and_status_map_load():
 def test_pv_reference_totals_add_up():
     pv = load_json("reference/pv_pending_2025.json")
     assert sum(pv["by_state"].values()) == pv["total"] == 277929
+
+
+def test_draft_templates_are_clean_blanks_only():
+    from app.agent.drafts import TEMPLATES
+
+    for category, text in TEMPLATES.items():
+        assert "\\" not in text, f"stray backslash in the {category} template"
+        assert text.count("[____]") >= 5 and text.startswith("DRAFT TEMPLATE")

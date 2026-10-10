@@ -14,7 +14,7 @@ Hackathon app (5-hour build, team of four). Plan: `docs/implementation.md`. Run 
 ## Conventions
 
 - `backend/app/schemas.py` is the API contract; `frontend/src/lib/types.ts` mirrors it. Change both together.
-- All Claude calls go through `app/llm.py` `structured()`. Model IDs come from settings, never hardcoded.
+- All model calls go through `app/llm.py` `structured()` (Claude, local Ollama, or mock; check `await llm.active_provider()`). Model IDs come from settings, never hardcoded.
 - One file per graph node in `backend/app/agent/nodes/`. Routing lives only in `agent/graph.py`.
 - Stubs are marked `TODO(agent|cart|frontend|voice)` by owning lane.
 - UI strings go in `frontend/src/i18n/en/<area>.json` first (one area file per lane); never hardcode user-facing text in components.

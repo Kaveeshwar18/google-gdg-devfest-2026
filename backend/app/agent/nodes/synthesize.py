@@ -3,19 +3,28 @@
 from xml.sax.saxutils import escape, quoteattr
 
 from app import llm
+from app.agent import scoring
 from app.agent.prompts import SYNTHESIZE_SYSTEM
 from app.agent.state import CaseState
-from app.config import get_settings
 from app.corpus import load_json
 from app.schemas import Answer, RecommendedPath
 
+NO_SOURCES = (
+    "We don't have reliable information about this problem yet, so we won't guess. "
+    "The official channels below can look at your specific case."
+)
+
 
 async def synthesize(state: CaseState) -> CaseState:
-    if get_settings().llm_is_mock:
+    if await llm.active_provider() == "mock":
         return {"answer": Answer.model_validate(load_json("fixtures/mock_answer.json")).model_dump()}
+
+    if not (state.get("rule_hits") or state.get("case_hits") or state.get("web_hits")):
+        return {"answer": abstain(NO_SOURCES).model_dump()}  # nothing to cite: never improvise
 
     user = (
         f"<context>\n{_format_context(state)}\n</context>\n\n"
+        f"{_format_verification(state)}"
         f"<triage>{state['triage']}</triage>\n\n"
         f"<problem>\n{state['raw_text']}\n</problem>"
     )
@@ -48,6 +57,23 @@ def _format_context(state: CaseState) -> str:
         )
         blocks.append(f"<source {attrs}>\n{escape(h['text'])}\n</source>")
     return "\n".join(blocks)
+
+
+def _format_verification(state: CaseState) -> str:
+    """Remedies after the official-rule check, known source disagreements, and the confidence ceiling."""
+    lines = []
+    for r in state.get("remedies", []):
+        cite = r["supported_by"][0]["source_id"] if r["supported_by"] else "?"
+        flag = " [CONTRADICTS an official rule: prefer the rule]" if r["conflicts_with_official"] else ""
+        lines.append(f"- {r['name']} (reported in {cite}, outcome {r['outcome']}){flag}")
+    for c in state.get("conflicts", []):
+        lines.append(f"- Sources disagree ({c['source_id']}): {c['issue']}")
+    level = scoring.level(state.get("retrieval_confidence", 0.0))
+    body = "\n".join(lines) or "(none)"
+    return (
+        f"<verification>\nCommunity remedies and known disagreements:\n{body}\n"
+        f"Evidence strength: {level}. Your `confidence` must not be higher than this.\n</verification>\n\n"
+    )
 
 
 def abstain(reason: str) -> Answer:

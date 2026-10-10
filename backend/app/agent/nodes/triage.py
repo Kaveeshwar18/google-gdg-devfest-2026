@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 
 from app import llm
 from app.agent.prompts import LANG_NAMES, TRIAGE_SYSTEM
+from app.agent.questions import pv_status_question
 from app.agent.state import CaseState
-from app.config import get_settings
 
 
 class Triage(BaseModel):
@@ -33,8 +33,12 @@ class Triage(BaseModel):
     clarify_question: str | None = Field(description="One short question in the user's language, or null")
 
 
+LOCAL_NO_CLARIFY_WORDS = 12  # small local models over-ask; a detailed message needs no question
+
+
 async def triage(state: CaseState) -> CaseState:
-    if get_settings().llm_is_mock:
+    provider = await llm.active_provider()
+    if provider == "mock":
         return {"triage": _mock(state).model_dump()}
 
     user = (
@@ -43,6 +47,17 @@ async def triage(state: CaseState) -> CaseState:
         f"<message>\n{state['raw_text']}\n</message>"
     )
     result = await llm.structured(Triage, system=TRIAGE_SYSTEM, user=user, tier="fast", max_tokens=1024)
+    detailed = len(state["raw_text"].split()) >= LOCAL_NO_CLARIFY_WORDS
+    if not result.clarify_question or (provider == "ollama" and detailed):
+        result.missing = []  # no question to ask means nothing to wait for
+    if question := pv_status_question(
+        category=result.category,
+        stage=result.stage,
+        text=state["raw_text"],
+        lang=state["lang"],
+        clarify_count=state.get("clarify_count", 0),
+    ):  # Journey B: the same fixed question whichever model is answering
+        result.missing, result.clarify_question = ["pv_status"], question
     return {"triage": result.model_dump()}
 
 

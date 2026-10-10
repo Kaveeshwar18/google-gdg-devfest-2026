@@ -5,10 +5,10 @@ import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app import rag
+from app import rag, ratelimit
 from app.config import get_settings
 from app.routers import case, health, speech, status
 
@@ -31,5 +31,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-for module in (health, case, speech, status):
+for module in (health, status):
     app.include_router(module.router, prefix="/api")
+for module in (case, speech):  # these call paid or slow services
+    app.include_router(module.router, prefix="/api", dependencies=[Depends(ratelimit.by_ip)])

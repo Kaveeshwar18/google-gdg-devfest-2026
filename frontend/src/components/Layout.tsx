@@ -23,6 +23,7 @@ export default function Layout() {
       {assisted && <AssistedBar />}
       {healthError && <p className="bg-red-100 px-4 py-2 text-sm text-red-900">{t('common.offline')}</p>}
       {health?.llm === 'mock' && <p className="bg-amber-100 px-4 py-2 text-sm text-amber-900">{t('common.mockMode')}</p>}
+      {health?.llm === 'local' && <p className="bg-amber-100 px-4 py-2 text-sm text-amber-900">{t('common.localMode')}</p>}
       <main className="flex-1 px-4 py-5">
         <Outlet />
       </main>

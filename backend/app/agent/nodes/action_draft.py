@@ -1,9 +1,8 @@
-"""action_draft (main model): fill a letter or affidavit TEMPLATE. Unknown fields stay [____]."""
+"""action_draft: attach a letter or affidavit TEMPLATE when one fits the problem. No model, no invented facts."""
 
+from app.agent.drafts import draft_for
 from app.agent.state import CaseState
 
 
 async def action_draft(state: CaseState) -> CaseState:
-    # TODO(agent): pick a template by triage.category (name affidavit, RPO representation, grievance);
-    # fill only user-confirmed facts; never invent facts; return None when no template applies.
-    return {"draft": None}
+    return {"draft": draft_for(state["triage"]["category"])}

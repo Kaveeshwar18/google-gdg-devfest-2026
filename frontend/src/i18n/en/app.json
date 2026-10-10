@@ -11,7 +11,8 @@
     "speak": "Speak",
     "stop": "Stop",
     "listen": "Listen",
-    "listening": "Listening…"
+    "listening": "Listening…",
+    "localMode": "Offline mode: a small model on this computer is answering, so replies are slower and less reliable."
   },
   "onboarding": {
     "chooseLanguage": "Choose your language",

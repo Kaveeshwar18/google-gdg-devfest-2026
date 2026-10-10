@@ -21,7 +21,7 @@ DISCLAIMER = "Guidance only, not legal advice. Confirm with the Passport Office.
 
 class HealthResponse(BaseModel):
     ok: bool = True
-    llm: Literal["live", "mock"]
+    llm: Literal["live", "local", "mock"] = Field(description="live=Claude, local=Ollama, mock=canned")
     sarvam: bool = Field(description="False -> frontend must use browser speech fallbacks")
     index_ready: bool = Field(description="False -> run `make ingest`")
 

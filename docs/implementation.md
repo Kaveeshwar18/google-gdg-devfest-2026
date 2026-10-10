@@ -3,6 +3,8 @@
 *Working title. Tagline: "Check before you book. Fix it when you're stuck."*
 *Version 1.0, 10 October 2026. Build window: 5 hours.*
 
+> **Corrections after v1.0** (this document is kept as written; see the "Corrections to the plan" list in `README.md`): the date-of-birth rule in 3.3 and 11 is outdated (birth certificate only for people born on or after 1 Oct 2023, unverified); `claude-haiku-5-5` does not exist; the A/B/C counter flow is unverified; the name-matching tolerances are our own judgment, not an official standard.
+
 ---
 
 ## 0. Read this first

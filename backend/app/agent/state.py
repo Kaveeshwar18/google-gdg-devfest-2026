@@ -7,6 +7,7 @@ class CaseState(TypedDict, total=False):
     thread_id: str
     lang: str  # one of schemas.Lang
     raw_text: str  # user message, PII-scrubbed; clarify answers are appended
+    refused: bool  # unsafe request: skip everything, answer with the legitimate route
     cart_issues: list[str]  # mismatch types from the Document Cart
     search_enabled: bool
 
@@ -18,7 +19,8 @@ class CaseState(TypedDict, total=False):
     retrieval_confidence: float  # 0..1
     web_hits: list[dict]
 
-    remedies: list[dict]  # verified remedies (verify node)
+    remedies: list[dict]  # community remedies after the official-rule check (verify node)
+    conflicts: list[dict]  # disagreements recorded on case cards: {issue, source_id}
     answer: dict  # schemas.Answer in English
     answer_local: dict | None  # schemas.Answer in the user's language
     localized: bool

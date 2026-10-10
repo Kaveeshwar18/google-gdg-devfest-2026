@@ -26,6 +26,8 @@ backend/tests/test_api.py  test_pii.py
 backend/pyproject.toml  uv.lock  Dockerfile
 ```
 
+**Status (updated):** tasks 2 to 8 are built and tested (see `backend/tests/`); what remains is task 1 (first run with a Claude key and prompt tuning) and task 9. Provider switch: Claude, local Ollama (Qwen2.5-3B) or mock; set in `.env`.
+
 **Tasks** (in order)
 1. **Must.** Put a real `ANTHROPIC_API_KEY` in `.env` and get live answers from `triage` (Haiku) and `synthesize` (Sonnet). Tune both prompts.
 2. **Must.** `retrieve`: query with `summary_en` and the raw text, merge the results, filter by service/category, re-weight by reliability and recency with a boost for official sources, dedupe by URL. Calibrate `LOW_CONFIDENCE` in `graph.py`; e5 scores bunch near 0.77 (§3.4 Retrieval design).
@@ -56,7 +58,7 @@ frontend/src/features/evisa/**       stretch, new folder
 3. **Must.** `extractFields` for PAN, Aadhaar, old passport, Class 10 marksheet, address proof and birth certificate. Keep `maskAadhaar` before anything is stored.
 4. **Must, never cut.** Confirm/edit screen: show what we read, let the user fix every field, then mark the document `confirmed`. Manual entry when OCR fails.
 5. **Must.** `checks.ts` `runChecks`:
-   - Blockers: name mismatch (port `compare_names` from §3.3; `fastest-levenshtein` is installed), DOB mismatch, DOB-proof type, completeness for the application type, age vs application type.
+   - Blockers: name mismatch (port `compare_names` from §3.3; `fastest-levenshtein` is installed), DOB mismatch between documents, completeness for the application type, age vs application type. **DOB-proof type is now unblocked:** the plan's "birth certificate if born on or after 26 Jan 1989" was outdated. Lane D verified the real rule from the official portal in `backend/data/rules/dob-proof.md` (`verified: true`): a birth certificate is the only proof for people born on or after **1 Oct 2023**; older applicants may use any one of the listed documents (school certificate, PAN, service record, driving licence, voter ID, LIC policy); PAN, service record, driving licence and voter ID count only if they show the exact date; and **Aadhaar is not a listed date-of-birth document** (it is accepted for address and identity). Code the check from that file, keep the cutoff date and accepted list in one constants file, and treat a date that differs between documents as a warning that commonly causes problems, since the portal says the final decision rests with the passport officer.
    - Warnings: address, parents' names.
    - Info: old passport expiry.
 6. **Must.** Application-type picker (fresh / reissue / minor). Result card: verdict, then found / why / fix for each issue. Wording is "commonly causes problems", never "will be rejected".
@@ -111,7 +113,7 @@ frontend/src/i18n/{hi,ta,mr,bn}/**   all non-English UI strings
 ```
 
 **Tasks** (in order)
-1. **Must.** Write 6–8 rule files in `data/rules/` from passportindia.gov.in. Cover document lists per application type, DOB proof, name change, address proof, police verification, Tatkaal and minors. Paraphrase in your own words and include `url` and `date_retrieved`. Set `verified: true` only after comparing against the live page.
+1. **Must.** Write 6–8 rule files in `data/rules/` from passportindia.gov.in. Cover document lists per application type, DOB proof, name change, address proof, police verification, Tatkaal and minors. Paraphrase in your own words and include `url` and `date_retrieved`. Set `verified: true` only after comparing against the live page. **Verify first, because the code depends on them:** (a) the date-of-birth proof rule: **done** (`dob-proof.md`, from the official portal; optionally also cite the Gazette notification at egazette.gov.in for the 2025 amendment); (b) the document list per application type from the Document Advisor on passportindia.gov.in; (c) the A/B/C counter flow, from the official PDF "Steps to Submit an Application at PSK" (it is image-only, so read it by eye).
 2. **Must.** Write 15+ case cards in `data/cases/` (§4.4 list). Own words, URL, reliability score. `category` must be one of the triage categories (Interfaces §4).
 3. **Must.** `make ingest`, then run 10 test questions with `make query q="..."` and send retrieval misses to Lane A.
 4. **Must.** Get a Sarvam key and test `/api/tts`, `/api/stt` and `/api/translate` live on a 5-second clip. Fix `speech.py` parameters and pick a voice per language (`SARVAM_TTS_SPEAKER`).
@@ -122,6 +124,28 @@ frontend/src/i18n/{hi,ta,mr,bn}/**   all non-English UI strings
 9. **Freeze.** Demo script and the problem slide (figures in `data/reference/`).
 
 **Done when:** retrieval finds the right case for 8 of 10 test questions, Hindi and Tamil answers read naturally to a native speaker, and the eval table exists.
+
+---
+
+## Where the data comes from, and what is only our judgment
+
+Nothing from government sites has been collected yet: today the corpus is one e-Visa rule file and one case card, and the figures in `data/reference/` are copied from the plan. Lane D's first job is to fix that.
+
+| Layer | What it is | Where to get it | Used for |
+|---|---|---|---|
+| **1. Law** | Passports Act 1967, Passport Rules 1980 and amendments, Annexures (affidavit forms) | passportindia.gov.in PDFs (Passport_Rules_1980, Revised_Annexures); amendments from egazette.gov.in | Rule files, draft templates |
+| **2. Applicant-facing rules** | Document Advisor, per-service document lists, FAQs | passportindia.gov.in | Document Cart checks, rule files |
+| **3. Officer instructions** | Passport Manual (only some chapters are public) | passportindia.gov.in disclosed-chapters PDF | Rule files |
+| **4. Office practice** | What one PSK or RPO actually accepts | **No official source.** Community Q&A (Kaanoon, TechEnclave, public Reddit), RTI replies, asking at a PSK | Case cards, always marked as community sources with a reliability score |
+
+How we collect: by hand, not by scraping. A person reads the page, writes it in their own words, and records the URL and date. Some official PDFs are image-only, and a person must compare each rule against the live page before `verified: true`.
+
+**What is our judgment, not an official standard.** Government sources say which documents are required and valid. They do not publish how strictly names must match or how officers weigh a mismatch. So the name-matching tolerances in the plan (exact, reordered, initials, fuzzy at 0.85) are our own starting guess. The Document Cart is our approximation of what Counter B checks. It is not the officers' algorithm, and the app must never say it is.
+- Hard blockers only for clear rule violations: a missing required document, a date-of-birth mismatch between documents, a proof type the rules do not accept.
+- Reordered names, initials and fuzzy matches are warnings, never blockers.
+- Adjust the 0.85 threshold as real cases show what actually gets returned.
+
+**The A/B/C counters** (from secondary sources, still unverified): A = service-provider staff (scrutiny, biometrics, fee); B = Verifying Officer, government (originals checked, stamped); C = Granting Officer, government (decides, and decides whether police verification is needed).
 
 ---
 

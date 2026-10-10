@@ -2,6 +2,7 @@
 
 intake -> triage -> [clarify -> triage]* -> retrieve -> [live_search] -> verify -> synthesize
        -> action_draft -> guardrail -> [synthesize once more] -> localize -> END
+An unsafe request (forge/alter/back-date a document) goes intake|clarify -> refuse -> localize -> END.
 """
 
 from functools import lru_cache
@@ -15,7 +16,11 @@ from app.agent.state import CaseState
 
 MAX_CLARIFY = 2
 MAX_REGENERATE = 1
-LOW_CONFIDENCE = 0.5
+LOW_CONFIDENCE = 0.45  # = scoring.MEDIUM: below this, live search (if enabled) is worth the delay
+
+
+def after_intake(state: CaseState) -> str:
+    return "refuse" if state.get("refused") else "triage"
 
 
 def after_triage(state: CaseState) -> str:
@@ -42,9 +47,10 @@ def build_graph() -> StateGraph:
         g.add_node(name, getattr(nodes, name))
 
     g.add_edge(START, "intake")
-    g.add_edge("intake", "triage")
+    g.add_conditional_edges("intake", after_intake, ["refuse", "triage"])
     g.add_conditional_edges("triage", after_triage, ["clarify", "retrieve"])
-    g.add_edge("clarify", "triage")
+    g.add_conditional_edges("clarify", after_intake, ["refuse", "triage"])
+    g.add_edge("refuse", "localize")
     g.add_conditional_edges("retrieve", after_retrieve, ["live_search", "verify"])
     g.add_edge("live_search", "verify")
     g.add_edge("verify", "synthesize")

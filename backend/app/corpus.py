@@ -114,6 +114,7 @@ def load_case_chunks() -> list[Chunk]:
                         "date": str(card["source"]["date"]),
                         "reliability": card["reliability"],
                         "conflict_note": card.get("conflict_note", ""),
+                        "remedies": json.dumps(card["remedies_reported"], ensure_ascii=False),
                     },
                 )
             )

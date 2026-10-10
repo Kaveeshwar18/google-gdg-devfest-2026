@@ -6,7 +6,7 @@ export type Confidence = 'high' | 'medium' | 'low'
 
 export interface Health {
   ok: boolean
-  llm: 'live' | 'mock'
+  llm: 'live' | 'local' | 'mock' // live = Claude, local = Ollama, mock = canned answers
   sarvam: boolean // false -> use browser speech fallbacks
   index_ready: boolean
 }
