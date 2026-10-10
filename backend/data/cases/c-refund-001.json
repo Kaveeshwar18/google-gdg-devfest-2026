@@ -1,0 +1,21 @@
+{
+  "id": "c-refund-001",
+  "category": "refund_reschedule",
+  "service": "fresh",
+  "situation": "An applicant paid the passport fee but cannot reschedule, had the appointment cancelled by the office, or has been waiting weeks for a refund of a failed or duplicate payment.",
+  "remedies_reported": [
+    {"name": "Check 'Track Payment Status' and reschedule within the allowed limit before the fee's one-year validity runs out", "outcome": "unknown"},
+    {"name": "For a failed payment that was debited, follow up with your own bank after seven working days, then the SBI payment helpdesk", "outcome": "unknown"},
+    {"name": "Raise a grievance on the Passport Seva portal with the ARN and transaction details", "outcome": "unknown"},
+    {"name": "File an RTI request with the MEA Consular, Passport and Visa Division for the refund status", "outcome": "unknown"}
+  ],
+  "conflict_note": "The guide gives a 60-day refund window and consumer-law escalation steps that are not on the official FAQ. The official portal itself states two different reschedule limits for normal appointments (two in the FAQ, three on the apply page).",
+  "source": {
+    "title": "righttoinformation.wiki: Passport appointment reschedule or refund stuck",
+    "url": "https://righttoinformation.wiki/passport-appointment-reschedule-refund-india",
+    "type": "blog",
+    "date": "2026-09"
+  },
+  "reliability": 2,
+  "your_summary": "A guide for applicants whose paid appointment could not be used or whose refund is late. It says to use the official payment-status and grievance tools first, then the SBI helpdesk, then RTI. Its legal escalation steps go beyond what the official pages say."
+}

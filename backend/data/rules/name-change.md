@@ -27,7 +27,7 @@ A Category 2 change, such as a new given name or a different surname not linked 
 
 ## Tatkaal and name changes
 
-This mission page says the Tatkaal service is not available for name-change applications. Other sources describe Tatkaal as allowed for minor spelling corrections or marriage-related changes, so the sources disagree. Before booking a Tatkaal appointment with a changed name, check the "Categories not under Tatkaal Scheme" list on passportindia.gov.in.
+This mission page says the Tatkaal service is not available for name-change applications. Passport Seva's own Tatkaal page agrees: its list of ineligible categories includes "any change in name" and any change of a father's, mother's or spouse's name. Some secondary sources say a minor spelling correction can still go through Tatkaal. That is not stated on the official pages reviewed, so applicants should not plan on it.
 
 ## Where this rule comes from
 

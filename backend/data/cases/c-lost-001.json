@@ -1,0 +1,21 @@
+{
+  "id": "c-lost-001",
+  "category": "lost_passport",
+  "service": "lost_damaged",
+  "situation": "A passport is lost or stolen, either in India or abroad, and the holder needs a replacement, possibly urgently.",
+  "remedies_reported": [
+    {"name": "Report the loss at the nearest police station and get an FIR or police report", "outcome": "unknown"},
+    {"name": "Apply online under re-issue with the reason 'lost', with Annexure F describing how and where it was lost", "outcome": "unknown"},
+    {"name": "If abroad, inform the Indian embassy or consulate and ask for an Emergency Certificate to return to India", "outcome": "unknown"},
+    {"name": "Use Tatkaal if the passport is damaged but still legible", "outcome": "unknown"}
+  ],
+  "conflict_note": "The guide talks about a 'duplicate' passport. Passport Seva says no duplicates are issued, only a new passport with a new number. Tatkaal is not available for lost or stolen passports, only for damaged ones that are still legible.",
+  "source": {
+    "title": "Royal Sundaram: Lost or stolen Indian passport, what to do next",
+    "url": "https://www.royalsundaram.in/knowledge-centre/travel/lost-or-stolen-indian-passport",
+    "type": "blog",
+    "date": "2025-04"
+  },
+  "reliability": 2,
+  "your_summary": "An insurer's guide to losing a passport. It says to report to the police first, then apply for re-issue with the police report and a loss affidavit, or get an Emergency Certificate abroad. It loosely calls the replacement a duplicate, which the official FAQ says does not exist."
+}

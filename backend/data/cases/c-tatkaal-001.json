@@ -1,0 +1,20 @@
+{
+  "id": "c-tatkaal-001",
+  "category": "other",
+  "service": "tatkaal",
+  "situation": "An applicant wants to renew urgently under Tatkaal and also change their surname after marriage or correct their name in the same application.",
+  "remedies_reported": [
+    {"name": "Apply under normal re-issue for the name change, since Tatkaal excludes any change in name", "outcome": "unknown"},
+    {"name": "Use Tatkaal only for an address change, which the guide says is allowed", "outcome": "unknown"},
+    {"name": "Book Tatkaal anyway with the name change", "outcome": "failed"}
+  ],
+  "conflict_note": "The guide says a minor spelling correction that does not change how the name sounds may still go through Tatkaal. The official Tatkaal list says only 'any change in name' and does not mention spelling corrections. Older instructions cited by other sources allowed Tatkaal for marriage-related changes.",
+  "source": {
+    "title": "Zurich Kotak: Changing the name or address on an Indian passport",
+    "url": "https://www.zurichkotak.com/knowledge-center/travel-insurance/passport-name-address-change",
+    "type": "blog",
+    "date": "2026-09"
+  },
+  "reliability": 2,
+  "your_summary": "A guide explaining that name and address changes are both handled as a re-issue, but that Tatkaal is closed for name changes, including the surname change after marriage. It warns that booking Tatkaal for a name change commonly fails at the counter and the fee is not refundable."
+}

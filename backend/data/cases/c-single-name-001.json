@@ -1,0 +1,20 @@
+{
+  "id": "c-single-name-001",
+  "category": "single_name",
+  "service": "reissue",
+  "situation": "An Indian passport printed the whole name in the Given Name field and left Surname blank, which does not match other documents and causes trouble with foreign visa and travel forms.",
+  "remedies_reported": [
+    {"name": "At a Passport Seva Kendra, apply for re-issue under 'change in particulars' (Others), asking for the name to be split into given name and surname", "outcome": "worked"},
+    {"name": "Abroad, apply by post to the Indian consulate with the old passport, photos and supporting documents to have the name split", "outcome": "worked"},
+    {"name": "Fill the name in the correct fields on a fresh application", "outcome": "failed"}
+  ],
+  "conflict_note": "Forum users report that one office refused to split the name on a fresh application while another did it as a re-issue. Official Passport Seva pages reviewed do not describe this case.",
+  "source": {
+    "title": "Immihelp forum: How can I get my name corrected in the Indian passport",
+    "url": "https://www.immihelp.com/forum/usa-visitors-visa/715591-how-can-i-get-my-name-corrected-in-the-indian-passport-in-india",
+    "type": "forum",
+    "date": "2019-11"
+  },
+  "reliability": 2,
+  "your_summary": "A passport put the full name under Given Name with no surname. In one reply, the passport office had refused to split a name even though the form was filled correctly, and the change was later made through a consulate abroad. In another, a reissue at a Passport Seva Kendra asking for the name to be split was reported as quick."
+}

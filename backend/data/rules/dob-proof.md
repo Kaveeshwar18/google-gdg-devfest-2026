@@ -15,7 +15,7 @@ For anyone born on or after 1 October 2023, Passport Seva accepts only one docum
 
 ## Accepted proofs for applicants born before 1 October 2023
 
-Applicants born before 1 October 2023 can attach any one of these:
+Applicants born before 1 October 2023 do not need a birth certificate. Someone without a birth certificate can attach any one of these instead:
 
 1. A birth certificate from the Registrar of Births and Deaths, a Municipal Corporation, or another authority empowered under the Registration of Births and Deaths Act, 1969.
 2. A transfer, school leaving or matriculation certificate from the recognised school last attended or a recognised educational board, showing the date of birth.

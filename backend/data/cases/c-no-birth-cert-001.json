@@ -1,0 +1,20 @@
+{
+  "id": "c-no-birth-cert-001",
+  "category": "no_birth_certificate",
+  "service": "fresh",
+  "situation": "An adult applying for a first passport has no birth certificate and is unsure which document can prove their date of birth instead.",
+  "remedies_reported": [
+    {"name": "Get a birth certificate issued by the local municipal office before applying", "outcome": "unknown"},
+    {"name": "Use a school leaving or matriculation certificate that shows the date of birth", "outcome": "unknown"},
+    {"name": "For someone who never went to school or left below class 5, a notarised affidavit of date and place of birth", "outcome": "unknown"}
+  ],
+  "conflict_note": "This older FAQ says anyone born on or after 26 January 1989 must have a birth certificate. The current Passport Seva list applies the birth-certificate-only rule to people born on or after 1 October 2023, and for everyone born before that it accepts school certificates, PAN, driving licence, voter ID and others. The affidavit route it mentions was repealed in 2016 according to secondary sources and does not appear on the current list.",
+  "source": {
+    "title": "NRI Information: How to apply for an Indian passport without a birth certificate",
+    "url": "https://nriinformation.com/faq/0507",
+    "type": "blog",
+    "date": "unknown"
+  },
+  "reliability": 1,
+  "your_summary": "An archived FAQ answer about applying without a birth certificate. It gives a 1989 birth-date cutoff and an affidavit option, both of which are outdated compared with today's official list. It is useful mainly as an example of stale advice that still circulates online and differs from the current rule."
+}

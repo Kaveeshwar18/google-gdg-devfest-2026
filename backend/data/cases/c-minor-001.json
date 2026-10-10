@@ -1,0 +1,20 @@
+{
+  "id": "c-minor-001",
+  "category": "minor_consent",
+  "service": "minor",
+  "situation": "One parent is applying for a child's passport while the other parent works or lives abroad, or is travelling, and cannot sign the consent declaration.",
+  "remedies_reported": [
+    {"name": "File Annexure C, ticking 'residing abroad' or 'travelling abroad' as the reason", "outcome": "unknown"},
+    {"name": "Attach the absent parent's passport copy plus proof of residence abroad (resident visa, immigration stamp) or of travel (visa, ticket, boarding pass)", "outcome": "unknown"},
+    {"name": "Have the absent parent sign Annexure D instead, if they can return or sign in time", "outcome": "unknown"}
+  ],
+  "conflict_note": "Tatkaal is not available for a minor's application filed with Annexure C, so this route takes the normal timeline. The passport office decides whether the supporting papers are enough.",
+  "source": {
+    "title": "Passport Seva: Annexure C, declaration when one parent has not given consent",
+    "url": "https://www.passportindia.gov.in/AppOnlineProject/pdf/AnnexureC.pdf",
+    "type": "official",
+    "date": "unknown"
+  },
+  "reliability": 5,
+  "your_summary": "When one parent is abroad and cannot sign, the official form lets the parent with the child declare why consent is missing and attach proof of the other parent's stay or travel abroad. The declaring parent also confirms the child is in their care and accepts responsibility if a court case arises."
+}

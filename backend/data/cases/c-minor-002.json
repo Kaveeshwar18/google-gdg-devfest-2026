@@ -1,0 +1,20 @@
+{
+  "id": "c-minor-002",
+  "category": "minor_consent",
+  "service": "minor",
+  "situation": "Parents want a passport for their baby or young child quickly and ask whether police verification can be avoided, given that both parents already hold passports.",
+  "remedies_reported": [
+    {"name": "Apply with both parents' consent on Annexure D; if either parent holds a valid passport that lists the other as spouse, verification is generally not needed", "outcome": "unknown"},
+    {"name": "Carry the parents' original passports and self-attested copies to the Passport Seva Kendra", "outcome": "unknown"},
+    {"name": "For a child aged 15 to 18, choose between a 5-year passport and a 10-year passport that needs prior verification", "outcome": "unknown"}
+  ],
+  "conflict_note": "The FAQ says verification is 'generally' not required and the final decision on the mode rests with the passport office, so skipping verification is likely but not certain.",
+  "source": {
+    "title": "Passport Seva FAQ: Police Verification (minors)",
+    "url": "https://www.passportindia.gov.in/psp/FaqPoliceVerification",
+    "type": "official",
+    "date": "unknown"
+  },
+  "reliability": 5,
+  "your_summary": "The official FAQ explains that a minor whose parents hold valid passports, with the spouse's name recorded and both parents consenting on Annexure D, is usually issued a 5-year passport without police verification. Older teenagers can choose a 10-year passport instead, which goes through verification first."
+}
